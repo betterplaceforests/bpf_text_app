@@ -1,0 +1,10 @@
+module Api
+  class MessagesController < ApplicationController
+
+    def create
+      
+    end
+
+  end
+
+end

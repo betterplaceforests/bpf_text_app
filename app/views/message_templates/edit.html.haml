@@ -1,0 +1,12 @@
+.container
+  .row.justify-content-center
+    .col-6
+      .card
+        = form_for @message_template, url: message_template_path(@message_template), method: :put do |f|
+          .card-header
+            = f.text_field :name, class: 'form-control'
+          .card-body
+            = f.text_area :body, class: 'form-control'
+          .card-footer.text-right
+            = f.submit "Update", class: 'btn btn-primary'
+            

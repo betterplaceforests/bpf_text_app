@@ -1,0 +1,19 @@
+.container
+  .row.justify-content-center
+    .col-6
+      .card
+        .card-header
+          .text-right
+            .small
+              Status:
+              = @message.status
+        .card-body
+          .small
+            = "#{@message.created_at.strftime("%m/%d/%Y")} - #{@message.user.name}"
+            
+            
+          %hr
+          = @message.body
+        .card-footer.text-right
+          Template: 
+          =link_to @message.message_template.name, message_template_path(@message.message_template)

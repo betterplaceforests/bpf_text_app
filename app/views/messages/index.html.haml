@@ -1,0 +1,23 @@
+.table-responsive
+  %table.table.table-bordered.table-striped.table-sm
+    %thead
+      %tr
+        %th ID
+        %th Body
+        %th Sent To
+        %th Status
+        %th Template
+        %th View
+
+    %tbody
+      - @messages.each do |message|
+        %tr
+          %td= message.id
+          %td= message.body
+          %td= message.user.name
+          %td= message.status
+          %td
+            = link_to message.message_template.name, message_template_path(message.message_template)
+          %td
+            = link_to "View Message", message_path(message)
+          

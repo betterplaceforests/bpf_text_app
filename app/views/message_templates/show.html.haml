@@ -1,0 +1,10 @@
+.container
+  .row.justify-content-center
+    .col-6
+      .card
+        .card-header
+          = @message_template.name
+        .card-body
+          = @message_template.body
+        .card-footer.text-right
+          = link_to "edit", edit_message_template_path(@message_template)
