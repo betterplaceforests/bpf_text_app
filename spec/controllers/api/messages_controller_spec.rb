@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Api::MessagesController, :type => :controller do
-  
+
   describe "#create" do
-    let!(:message_template){ create(:message_template, 
-                                      name: 'hello_template', 
+    let!(:message_template){ create(:message_template,
+                                      name: 'hello_template',
                                       body: "Hello %name%. %forest_steward% will see you in %preferred_forest%.",
                                     )}
-    
-    let!(:user){ create(:user, 
-                          email: "user@email.com", 
-                          name: 'Customer Mcgee', 
-                          forest_steward: 'Frank Smith', 
+
+    let!(:user){ create(:user,
+                          email: "user@email.com",
+                          name: 'Customer Mcgee',
+                          forest_steward: 'Frank Smith',
                           preferred_forest: 'Santa Cruz'
                         )}
 
@@ -26,7 +26,7 @@ RSpec.describe Api::MessagesController, :type => :controller do
       post :create, params: params
 
       message = assigns(:message)
-      expect(assigns(:message).body).to eq "Hello Customer Mcgee. Frank Smith will see you in Santa Cruz."
+      expect(message.body).to eq "Hello Customer Mcgee. Frank Smith will see you in Santa Cruz."
     end
   end
 
