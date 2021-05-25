@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Bootrap for views
 gem "haml-rails", "~> 2.0"
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap'
 gem 'jquery-rails', '~> 4.3.1'
 
 # Use Redis adapter to run Action Cable in production
